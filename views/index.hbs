@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--import hello sign scripts-->
+    <script src="https://cdn.hellosign.com/public/js/embedded/v2.9.0/embedded.development.js"></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+      const hs_client = new window.HelloSign({clientId: "{{hellosign_client_id}}" });
+      // redirect page after signing the contract
+      hs_client.on('sign', (data) => {
+        document.body.innerHTML = "<h2>Thank you for signing the Document! We will contact you shortly</h2>"
+      });
+      //for test mode only
+      let hs_options = { skipDomainVerification: true };
+      let embed_url = "{{{embed_url}}}";
+      hs_client.open(embed_url,hs_options);
+    </script>
+  </body>
+</html>
