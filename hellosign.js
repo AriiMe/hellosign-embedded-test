@@ -1,15 +1,15 @@
 const hellosign = require("hellosign-sdk")({ key: process.env.HELLOSIGN_API_KEY });
 
-const getEmbedURL = async (github_email,github_username)=>{
+const getEmbedURL = async (github_email, github_username) => {
   let options = {
     test_mode: 1,
     clientId: process.env.HELLOSIGN_CLIENT_ID,
     template_id: process.env.CLA_TEMPLATE_ID,
-    subject: 'Contributor License Agreement',
+    subject: 'Student License Agreement',
     signers: [
       {
         email_address: github_email,
-        name: 'Contributor',
+        name: 'Student',
         role: process.env.SIGNER_ROLE_NAME
       }
     ],
