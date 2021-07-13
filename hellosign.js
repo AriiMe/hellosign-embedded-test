@@ -1,6 +1,6 @@
 const hellosign = require("hellosign-sdk")({ key: process.env.HELLOSIGN_API_KEY });
 
-const getEmbedURL = async (github_email, github_username) => {
+const getEmbedURL = async () => {
   let options = {
     clientId: process.env.HELLOSIGN_CLIENT_ID,
     title: 'Vertrag GFN',
@@ -8,17 +8,17 @@ const getEmbedURL = async (github_email, github_username) => {
     message: 'embedded draft test',
     signers: [
       {
-        email_address: github_email,
-        name: github_username,
+        email_address: "epicari66@ymail.com",
+        name: "ari raz",
         role: process.env.SIGNER_ROLE_NAME
       }
     ],
+
     files: ['Vertrag_Musterfrau1.docx'],
     use_text_tags: 1,
     hide_text_tags: 1,
     test_mode: 1,
   };
-  console.log(options)
 
   //create an embeded signature request
 
