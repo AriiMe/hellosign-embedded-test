@@ -49,5 +49,7 @@ server.get('/cla', async (req, res) => {
   // }
 });
 
+console.log("test")
+
 // GitHub OAuth callback
 // server.get('/auth', github.auth);
